@@ -1,0 +1,61 @@
+body {font-family: Arial, Helvetica, sans-serif;}
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    position: absolute;
+    margin-left: 25%;
+    top:20%;
+    background-color: #fefefe;
+    width: 50%;
+}
+.close {
+    position: absolute;
+    top: 30px;
+    right:20px;
+    color: white;
+    float: right;
+    font-size: 18px;
+    
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-header {
+    padding: 2px 16px;
+    background-color: #5cb85c;
+    color: white;
+}
+
+.modal-body {padding: 20px 16px;}
+
+.modal-footer {
+    background-color: #5cb85c;
+}
+
+#result{
+    padding: 18px;
+    font-size: 24px;
+}
+#congrat{
+    display: none;
+    font-size: 30px;
+    color: red;
+    font-weight: bold;
+}

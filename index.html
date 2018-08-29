@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title >HTML5 Puzzle</title> 
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/modal.css">
+</head>
+ 
+<body onload="init();">
+    <div class="navbar">
+      P U Z Z L E
+    </div>
+    <div style="text-align: center;font-size: 20px;margin: 70px;">
+        welcome to the puzzle game!
+    </div>
+
+    <div>
+        <div class="left-side">
+            <p class="sub_title">Imagen</p>
+            <div class="container" align="center">
+                <div class="canvasload" id="filedrag">
+                    <canvas id="canvas"></canvas>
+                    <input type="file" accept="image/*" id="fileUpload">
+                </div>    
+            </div>
+            
+           <form id="upload" action="index.html" method="POST" enctype="multipart/form-data">
+                <fieldset hidden>
+                    <input type="hidden" id="MAX_FILE_SIZE" name="MAX_FILE_SIZE" value="300000" />
+                    <div>
+                        <input type="file" id="fileselect" name="fileselect[]" accept="image/*"  />
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+
+        <div class="right-side">
+            <p class="sub_title">Puzzle</p>
+            <div class="container" align="center">
+                    <div class="right_canvas" >
+                    <div class="canvasfit" >
+                        <canvas id="canvaspuzzle"></canvas>
+                    </div>
+
+                    <button id="start" onclick="startNewGame();" >Start</button>
+                    <button id="pause" onclick=" pausaCrono(); j=i;i=-1" >Pause</button>
+                    <button id="continue" onclick="continueGame();" >Continue</button>
+                    <button id="finish" onclick="gameOver()">Finish</button>
+                    <button id="help" onclick="hint();">Help</button>
+                    
+                    <select id="nivel" onchange='changeLevel()'>
+                        <option value="1">Facil</option>
+                        <option value="2">Medio</option>
+                        <option value="3">Dificil</option>
+                    </select>
+                    <input type="color" name="favcolor" value="#ff0000" id="colorpicker" onchange="cambiacolor();">
+                </div>
+                <div class="btn_container">
+                    <p>Time:</p>                 <span id="time" >00: 00: 00</span>
+                    <p>Piezas desordenadas: </p> <span id="shuffle">0</span>
+                    <p>Movimentos:</p>           <span id="clickCounter">0</span>
+                </div>    
+                    
+            </div>
+            
+        </div>    
+    </div>
+    
+    <div class="footer_container">
+        <div class="footer_content">
+            <span class="footer" style="padding-left: 80px;">read more</span>
+            <span class="footer" style="text-align: center;">2018</span>    
+        </div>    
+    </div>
+    
+
+    <div id="myModal" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 style="text-align: center;">Your Game Score</h2>
+          <span class="close" onclick="closeModal()">Close</span>
+        </div>
+        <div class="modal-body">
+          <div style="text-align: center;" id="result"></div>
+          <div style="text-align: center;"><span id="congrat">Congrats!</span></div>
+        </div>
+      </div>
+    </div>
+    <script src="js/funciones.js"></script>
+    <script src="js/upload.js"></script>
+    <script src="js/filedrag.js"></script>
+
+</body>
+ 
+</html>
